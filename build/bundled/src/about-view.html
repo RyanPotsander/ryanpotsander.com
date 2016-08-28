@@ -1,0 +1,233 @@
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+
+
+
+</head><body><dom-module id="about-view">
+  <template>
+    <style>
+       :host {
+        display: block;
+        position: relative;
+        font-family: 'Roboto', Helvetica, sans-serif;
+      }
+
+
+      .middle-container {
+        @apply(--layout-horizontal);
+        margin: 24px 0px 24px 0px;
+      }
+
+      #mainContent {
+        margin: auto;
+        max-width: 1000px;
+      }
+
+      #headerContent {
+        @apply(--layout-vertical);
+        @apply(--layout-flex);
+        color: #FFFFFF; 
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      #header {
+        background-color: #2196F3;
+        height: 400px;
+        @apply(--layout-horizontal); 
+      }
+
+      .small-card {
+        @apply(--layout-vertical);
+        padding: 48px;
+        color: rgba(0,0,0,0.7);
+        margin-right: 8px;
+      }
+
+      .preview-card {
+        @apply(--layout-vertical);
+        @apply(--layout-flex);
+        padding: 48px;
+        color: rgba(0,0,0,0.7);
+        margin-left: 8px;
+      }
+
+      .samples-card {
+        @apply(--layout-wrap);
+        padding: 48px;
+      }
+
+      .title {
+        font-size: 32px;
+        padding-bottom: 48px;
+      }
+
+
+      .small-title {
+        color: #2196F3;
+        font-size: 24px;
+        padding-bottom: 24px;
+      }
+
+      .description {
+        @apply(--layout-wrap);
+        width: 400px;
+        font-size: 12px;
+      }
+
+      .links {       
+        @apply(--layout-horizontal);
+        @apply(--layout-flex);  
+        margin-top: 48px;
+      }
+
+      .skills-items {
+        width: 200px;
+      }
+
+      .skills-item{
+        margin: 0px 0px 16px 0px;
+      }
+
+      .level {
+        height: 2px;
+        width: 100%;
+        background-color: #BDBDBD;
+      }
+
+      .level-adv {
+        height: 2px;
+        width: 90%;
+        background-color: #E040FB;
+      }
+
+      .level-mid{
+        height: 2px;
+        width: 50%;
+        background-color: #E040FB;
+      }
+
+      .level-beg {
+        height: 2px;
+        width: 15%;
+        background-color: #E040FB;
+      }
+
+      .image-container {
+        height: 200px;
+        width: 112px;
+      }
+
+      .img-port {
+        height: 200px;
+        width: 112px;
+      }
+
+      .space {
+        width: 8px;
+      }
+
+      paper-button {
+        color: #B388FF;
+      }
+
+       
+      
+    </style>
+
+    <div id="header">
+        
+        <div id="headerContent">
+          
+            <div class="title">About Me...</div>  
+          
+          <div class="horizontal layout">
+            <div class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Morbi vel posuere neque, ut ornare purus. Nulla condimentum sem vel feugiat luctus. 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Morbi vel posuere neque, ut ornare purus. Nulla condimentum sem vel feugiat luctus.           
+            </div>
+          </div>
+          
+          <div class="horizontal layout">
+            <div class="links"> 
+              <a href="https://github.com/RyanPotsander" tabindex="-1">
+                  <paper-icon-button src="../../images/github-white.png"></paper-icon-button>
+              </a>
+              <a href="https://www.linkedin.com/in/ryan-potsander-875925120" tabindex="-1">
+                  <paper-icon-button src="../../images/linkedin-white.png"></paper-icon-button>
+              </a> 
+              <paper-icon-button src="../../images/fb-white.png"></paper-icon-button>
+            </div> 
+          </div>  
+        </div>       
+    </div>
+
+    <div id="mainContent">
+
+    <div class="middle-container">
+
+      <paper-card class="small-card" elevation="1">
+        
+        <div class="horizontal layout">
+          <div class="small-title">Skills</div>
+        </div>
+        
+        <div class="vertical layout flex">
+          <div class="skills-items">
+            <div class="skills-item"><div class="skill-name">Android</div><div class="level"><div class="level-adv"></div></div></div>
+            <div class="skills-item"><div class="skill-name">Java</div><div class="level"><div class="level-adv"></div></div></div>
+            <div class="skills-item"><div class="skill-name">SQlite</div><div class="level"><div class="level-mid"></div></div></div>
+            <div class="skills-item"><div class="skill-name">XML</div><div class="level"><div class="level-adv"></div></div></div>
+            <div class="skills-item"><div class="skill-name">HTML</div><div class="level"><div class="level-mid"></div></div></div>
+            <div class="skills-item"><div class="skill-name">CSS</div><div class="level"><div class="level-mid"></div></div></div>
+            <div class="skills-item"><div class="skill-name">Javascript</div><div class="level"><div class="level-mid"></div></div></div>
+            <div class="skills-item"><div class="skill-name">PHP</div><div class="level"><div class="level-mid"></div></div></div>
+          </div>
+        </div> 
+      </paper-card>
+
+      <paper-card class="preview-card" elevation="1">
+        <div class="small-title">My Work</div>
+
+        <div class="horizontal layout wrap">
+          <paper-material class="image-container" elevation="4">
+            <img class="img-port" src="../images/preview/ving-tsun-2.png">
+          </paper-material> 
+          <div class="space"></div>
+          <paper-material class="image-container" elevation="4">
+            <img class="img-port" src="../images/preview/vape-1.png">
+          </paper-material> 
+        </div>
+
+        <div class="horizontal end-justified layout">
+          <paper-button>Projects</paper-button>
+        </div>
+          
+      </paper-card>
+    </div>
+
+    <paper-card class="samples-card" elevation="1">
+        <div class="small-title">Experience</div>
+        <div class="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Morbi vel posuere neque, ut ornare purus. Nulla condimentum sem vel feugiat luctus.  
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Morbi vel posuere neque, ut ornare purus. Nulla condimentum sem vel feugiat luctus. 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Morbi vel posuere neque, ut ornare purus. Nulla condimentum sem vel feugiat luctus. 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Morbi vel posuere neque, ut ornare purus. Nulla condimentum sem vel feugiat luctus.    
+        </div>
+    </paper-card>
+    </div>
+
+
+  </template>
+
+  <script>Polymer({is:"about-view",properties:{prop1:{type:String,value:"about-view"}}});</script>
+</dom-module></body></html>

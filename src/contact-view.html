@@ -1,0 +1,185 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../../bower_components/iron-form-element-behavior/iron-form-element-behavior.html">
+
+
+<dom-module id="contact-view">
+  <template>
+    <style>
+       :host {
+        display: block;
+        position: relative;
+        font-family: 'Roboto', Helvetica, sans-serif;
+      }
+
+      paper-material {
+        
+        background-color: #FFFFFF;
+        margin-top: 24px;
+      }
+
+      paper-button {
+        margin-top: 48px;
+        padding: 16px;
+        color: #FFFFFF;
+        background-color: #2196F3;
+      }
+
+      paper-input {
+        --paper-input-container-color: #2196F3;
+        padding: 16px;
+      }
+
+       #headerContent {
+        @apply(--layout-vertical);
+        @apply(--layout-flex);
+        color: #FFFFFF; 
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      #header {
+        background-color: #2196F3;
+        @apply(--layout-horizontal); 
+        height: 400px;
+      }
+
+       #mainContent {
+        margin: auto;
+        max-width: 1000px;
+      }
+
+      .right-side {
+        color: #FFFFFF;
+        background-color: #2196F3;
+        @apply(--layout-vertical);
+        padding: 48px;
+      }
+
+      .left-side {
+        @apply(--layout-vertical);
+        @apply(--layout-flex);
+        padding: 48px;
+      }
+
+      #msg {
+        margin-top: 48px;
+      }
+
+      .contact-button {
+        color: #BDBDBD;
+        padding: 0px; 
+        height: 50px;
+        width: 50px;
+      }
+
+      .contact-link { 
+        @apply(--layout-vertical);
+        @apply(--layout-center-justified);
+        padding-left: 24px;
+      }
+
+      .links {
+        @apply(--layout-horizontal);
+        @apply(--layout-justified);
+        @apply(--layout-flex);
+        @apply(--layout-end);
+      }
+      
+      a {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+
+      #title {
+        font-family: 'Roboto', Helvetica, sans-serif;
+        color: #FFFFFF;
+        font-size: 32px;
+        margin-bottom: 50px;
+      }
+
+    </style>
+
+    <div id="header">
+      <div id="headerContent">
+        <div id="title">Have a great idea for an app?</div>
+      </div>
+    </div>
+
+    <div id="mainContent">
+
+      <paper-material class="horizontal layout">
+
+        <div class="left-side">
+          <form is="iron-form" id="form" action="../handler.php" method="post">
+            <div class="horizontal layout">
+                <paper-input name="name" label="Name"></paper-input>
+                <paper-input class="flex" name="phone" label="Contact Number"></paper-input>
+            </div>
+            
+            <paper-input name="email" label="Email"></paper-input>
+            <paper-input id="msg" name="message" label="Message"></paper-input>
+
+            <div class="horizontal end-justified layout">
+              <paper-button raised="" on-tap="submitForm">Send</paper-button>  
+            </div>
+          </form>
+        </div>
+
+        <div class="right-side">
+          
+       
+            <a href="mailto:ryan@ryanpotsander.com" id="emailAdress">
+              <paper-icon-button class="contact-button" icon="communication:mail-outline"</paper-icon-button>
+            </a>
+            <a class="contact-link" href="mailto:ryan@ryanpotsander.com">ryan@ryanpotsander.com</a>
+
+         
+            <a href="tel:561-906-1129"><paper-icon-button class="contact-button" icon="communication:phone"</paper-icon-button></a>
+            <a class="contact-link" href="tel:561-906-1129">(561) 320-2160</a>
+
+            <div class="links"> 
+              <a href="https://github.com/RyanPotsander" tabindex="-1">
+                  <paper-icon-button src="../images/github-white.png"></paper-icon-button>
+              </a>
+              <a href="https://www.linkedin.com/in/ryan-potsander-875925120" tabindex="-1">
+                  <paper-icon-button src="../images/linkedin-white.png"></paper-icon-button>
+              </a> 
+              <paper-icon-button src="../images/fb-white.png"></paper-icon-button>
+            </div> 
+
+        </div>
+    
+      </paper-material>
+
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'contact-view',
+
+      properties: {
+
+        prop1: {
+          type: String,
+          value: 'contact-view',
+        },
+
+      },
+
+      submitForm: function() {
+        document.getElementById("form").submit();
+      },
+
+    });
+  </script>
+</dom-module>

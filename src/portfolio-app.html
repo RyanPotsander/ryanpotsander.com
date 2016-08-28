@@ -1,0 +1,183 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="about-view.html">
+<link rel="import" href="project-view.html">
+<link rel="import" href="contact-view.html">
+<link rel="import" href="about-small.html">
+<link rel="import" href="project-small.html">
+<link rel="import" href="contact-small.html">
+
+
+
+<dom-module id="portfolio-app">
+  <template>
+    <style>
+       :host {
+        display: block;
+        min-height: 110vh;
+      }
+
+      app-header {
+        @apply(--layout-fixed-top);        
+        background-color: #2196F3;
+        color: #FFFFFF;
+       }
+
+       #headerSpace {
+        height: 400px;
+       }
+       
+      .app-name {
+        font-family: 'Roboto', Helvetica, sans-serif; 
+        @apply(--layout-vertical);
+        @apply(--layout-start);
+        color: #FFFFFF;
+        letter-spacing: 0.2em;  
+        font-size: 18px;
+      }
+
+      .app-name-small {
+            text-align: center;
+            font-family: 'Roboto', Helvetica, sans-serif; 
+            font-size: 24px;
+            font-weight: 300;    
+            letter-spacing: 0.2em;  
+          }
+
+      @media (max-width: 900px) {
+
+        app-header {
+          background-color: #2196F3;
+          color: #FFFFFF;
+        }
+
+          .app-name {
+            text-align: center;
+            font-family: 'Roboto', Helvetica, sans-serif; 
+            font-size: 24px;
+            font-weight: 300;    
+            letter-spacing: 0.2em;  
+          }
+
+          .subtitle {
+            text-align: center;
+            font-family: 'Roboto', Helvetica, sans-serif; 
+            font-size: 14px;
+            font-weight: 200;
+            letter-spacing: 0.2em; 
+          }
+
+          .header-img {
+            width: 100%;
+
+          }
+
+          
+      }
+
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+      route="{{route}}"
+      pattern="/:view"
+      data="{{routeData}}"
+      tail="{{subroute}}">
+    </app-route>
+
+    <iron-media-query query="max-width: 900px" query-matches="{{smallScreen}}"></iron-media-query>
+
+    
+    
+      <app-header-layout>
+
+      <!--small screen sizes -->
+        <template is="dom-if" if="{{smallScreen}}">
+          <app-header id="header" effects="waterfall" fixed condenses>
+            <app-toolbar class="tab-bar">
+              <div class="app-name-small" main-title>Ryan Potsander</div>
+            </app-toolbar>
+            <app-toolbar sticky>
+                <paper-tabs selected="{{selected}}" no-bar="true" bottom-item>
+                  <paper-tab>About</paper-tab>
+                  <paper-tab>Projects</paper-tab>
+                  <paper-tab>Contact</paper-tab>
+                </paper-tabs> 
+              </app-toolbar>
+          </app-header>
+
+          <iron-pages selected="{{selected}}">
+            <about-small></about-small>
+            <project-small></project-small>
+            <contact-small></contact-small>
+          </iron-pages>
+        </template>
+
+        <!--large screen-->
+        <template is="dom-if" if="{{!smallScreen}}">
+          <app-header id="header" effects="waterfall" fixed condenses>
+            <app-toolbar class="tab-bar" sticky>
+            <div class="app-name">Ryan Potsander</div>
+              <div class="flex horizontal end-justified layout">
+                <paper-tabs selected="{{selected}}" no-bar="true">
+                  <paper-tab>About</paper-tab>
+                  <paper-tab>Projects</paper-tab>
+                  <paper-tab>Contact</paper-tab>
+                </paper-tabs> 
+              </div>
+            </app-toolbar>
+          </app-header>
+        
+
+          <iron-pages selected="{{selected}}">
+            <about-view></about-view>
+            <project-view></project-view>
+            <contact-view></contact-view>
+          </iron-pages>
+        </template>
+
+      </app-header-layout>
+   
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'portfolio-app',
+
+      properties: {
+
+        prop1: {
+          type: String,
+          value: 'portfolio-app',
+        },
+
+      },
+
+      ready: function() {
+        this.selected = 0;
+      },
+
+      toggleDrawer: function() {
+        this.drawerOpened = !this.drawerOpened;
+      }
+
+    });
+  </script>
+</dom-module>

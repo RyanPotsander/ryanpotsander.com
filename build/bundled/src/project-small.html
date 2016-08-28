@@ -1,0 +1,185 @@
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
+
+
+</head><body><dom-module id="project-small">
+  <template>
+    <style>
+       :host {
+        display: block;
+        position: relative;   
+        font-family: 'Roboto', Helvetica, sans-serif; 
+      }
+
+      .main-content {
+        @apply(--layout-vertical);
+        max-width: 350px;
+        margin: auto;
+      }
+
+      .image-container {
+        height: 200px;
+        width: 112px;
+      }
+
+      .image-container-land {
+        height: 131px;
+        width: 230px;
+      }
+      .img-port {
+        height: 200px;
+        width: 112px;
+      }
+
+      .img-land {
+        height: 131px;
+        width: 230px;
+      }
+
+      .notes {
+        font-size: 14px;
+        color: #B388FF;
+      }
+
+      .space {
+        width: 8px;
+      }
+
+      .project-card {
+        @apply(--layout-vertical);
+        height: 350px;
+        min-width: 300px;
+        margin: 16px;
+      }
+
+      .title-bar {
+        @apply(--layout-vertical);
+        max-width: 300px;
+        padding: 16px 16px 8px 16px;
+      }
+
+      .card-top {
+        background-color: #FAFAFA;
+        padding: 16px;
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+        @apply(--layout-flex);
+        @apply(--layout-center-justified);
+      }
+
+      .card-title {
+        @apply(--layout-horizontal);
+        font-size: 18px;
+        padding-bottom: 8px;
+      }
+      
+    </style>
+
+    <div class="main-content">
+
+      
+      <paper-card class="project-card">
+          <div class="card-top">
+            <paper-material class="image-container" elevation="4">
+              <img class="img-port" src="../images/preview/my-voice-1.png">
+            </paper-material> 
+            <div class="space"></div>
+            <paper-material class="image-container" elevation="4">
+              <img class="img-port" src="../images/preview/my-voice-2.png">
+            </paper-material> 
+          </div>
+          <div class="title-bar">
+            <div class="card-title">My Voice</div>
+            <div class="notes">Android, Java, JavaCV library, FFmpeg, Audio2Video</div>
+          </div>
+     </paper-card>
+
+     
+        <paper-card class="project-card">
+          <div class="card-top">
+            <paper-material class="image-container" elevation="4">
+              <img class="img-port" src="../images/preview/vape-1.png">
+            </paper-material> 
+            <div class="space"></div>
+            <paper-material class="image-container" elevation="4">
+              <img class="img-port" src="../images/preview/vape-2.png">
+            </paper-material> 
+
+          </div>
+          <div class="title-bar">
+            <div class="card-title">Customer Management App</div>
+            <div class="notes">Android, Java, SQlite, GAE data store </div>
+          </div>
+        </paper-card>
+
+        
+        <paper-card class="project-card">
+          <div class="card-top">
+            <paper-material class="image-container" elevation="4">
+              <img class="img-port" src="../images/preview/androidCV.png">
+            </paper-material> 
+          </div>
+          <div class="title-bar">
+            <div class="card-title">Audio2Video Library</div>
+            <div class="notes">Android, Java, JavaCV/OpenCV, FFmpeg </div>
+          </div>
+        </paper-card>
+
+        
+        <paper-card class="project-card">
+          <div class="card-top">
+            <paper-material class="image-container" elevation="4">
+            <img class="img-port" src="../images/preview/ving-tsun-2.png">
+          </paper-material> 
+            <div class="space"></div>
+            <paper-material class="image-container" elevation="4">
+            <img class="img-port" src="../images/preview/ving-tsun-3.png">
+          </paper-material> 
+          </div>
+          <div class="title-bar">
+            <div class="card-title">Wing Chun Training App</div>
+            <div class="notes">Android, Java, XML</div>
+          </div>
+        </paper-card>
+
+        
+        <paper-card class="project-card">
+          <div class="card-top">
+            <paper-material class="image-container" elevation="4">
+              <img class="img-port" src="../images/preview/rvcursor.png">
+            </paper-material> 
+          </div>
+          <div class="title-bar">
+            <div class="card-title">RecyclerViewCursorAdapter</div>
+            <div class="card-title">Library</div>
+            <div class="notes">Android, Java</div>
+          </div>
+        </paper-card>
+    
+        
+        <paper-card class="project-card">
+          <div class="card-top">
+            <paper-material class="image-container-land" elevation="4">
+              <img class="img-land" src="../images/preview/site.png">
+            </paper-material> 
+          </div>
+          <div class="title-bar">
+            <div class="card-title">ryanpotsander.com</div>
+            <div class="notes">HTML5, CSS3, Polymer, PHP</div>
+          </div>
+        </paper-card>
+      </div>
+
+    
+
+    
+
+  </template>
+
+  <script>Polymer({is:"project-small",properties:{prop1:{type:String,value:"project-small"}}});</script>
+</dom-module></body></html>

@@ -1,0 +1,7 @@
+{
+  "name": "my-portfolio",
+  "short_name": "my-portfolio",
+  "description": "Android developer portfolio",
+  "start_url": "/",
+  "display": "standalone"
+}

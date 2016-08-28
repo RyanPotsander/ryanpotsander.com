@@ -1,0 +1,159 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../../bower_components/iron-form-element-behavior/iron-form-element-behavior.html">
+
+
+<dom-module id="contact-small">
+  <template>
+    <style>
+       :host {
+        display: block;
+        position: relative;
+        font-family: 'Roboto', Helvetica, sans-serif;
+      }
+
+      paper-button {
+        margin-top: 48px;
+        padding: 16px;
+        color: #FFFFFF;
+        background-color: #2196F3;
+      }
+
+      paper-input {
+        --paper-input-container-color: #2196F3;
+        padding: 16px;
+      }
+
+       #mainContent {
+        @apply(--layout-vertical);
+        margin: auto;
+        padding-top: 16px;
+        max-width: 350px;
+      }
+
+      #top {
+        padding: 16px;
+        color: #FFFFFF;
+        background-color: #2196F3;
+        @apply(--layout-vertical);
+        @apply(--layout-justified);
+      }
+
+      #bottom {
+        @apply(--layout-vertical);
+        @apply(--layout-flex);
+        padding: 48px;
+      }
+
+      #msg {
+        margin-top: 48px;
+      }
+
+      .contact-button {
+        color: #BDBDBD;
+        padding: 0px; 
+        height: 50px;
+        width: 50px;
+      }
+
+      .contact-link { 
+        @apply(--layout-vertical);
+        @apply(--layout-center-justified);
+        padding-left: 24px;
+      }
+
+      .contact-item {
+        @apply(--layout-horizontal);
+        padding-bottom: 16px;
+      }
+
+      .links {
+        @apply(--layout-horizontal);
+        @apply(--layout-end-justified);
+        @apply(--layout-end);
+      }
+      
+      a {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+
+    </style>
+
+    <div id="mainContent">
+
+      <paper-card>
+
+      <!--top-->
+      <div id="top">
+        <div class="contact-item">
+          <a href="mailto:ryan@ryanpotsander.com" id="emailAdress">
+            <paper-icon-button class="contact-button" icon="communication:mail-outline"</paper-icon-button>
+          </a>
+          <a class="contact-link" href="mailto:ryan@ryanpotsander.com">ryan@ryanpotsander.com</a>
+        </div>
+
+        <div class="contact-item">
+          <a href="tel:561-906-1129"><paper-icon-button class="contact-button" icon="communication:phone"</paper-icon-button></a>
+          <a class="contact-link" href="tel:561-906-1129">(561) 320-2160</a>
+        </div>
+
+        <div class="contact-item">
+          <paper-icon-button class="contact-button" icon="communication:chat-bubble-outline"</paper-icon-button>
+          
+          
+        </div>
+
+        
+      </div>
+
+      <div id="bottom">
+        <form is="iron-form" id="form" action="../handler.php" method="post">
+            <paper-input name="name" label="Name"></paper-input>
+            <paper-input class="flex" name="phone" label="Contact Number"></paper-input>
+            <paper-input name="email" label="Email"></paper-input>
+            <paper-input id="msg" name="message" label="Message"></paper-input>
+
+            <div class="horizontal end-justified layout">
+              <paper-button raised="" on-tap="submitForm">Send</paper-button>  
+            </div>
+
+        </form>
+      </div>
+
+        
+
+      </paper-card>
+
+    </div>  
+      
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'contact-small',
+
+      properties: {
+
+        prop1: {
+          type: String,
+          value: 'contact-small',
+        },
+
+      },
+
+      submitForm: function() {
+        document.getElementById("form").submit();
+      },
+
+    });
+  </script>
+</dom-module>

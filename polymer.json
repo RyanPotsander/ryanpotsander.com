@@ -1,0 +1,12 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/portfolio-app/portfolio-app.html",
+  "fragments": [
+    "src/about-view/about-view.html",
+    "src/project-view/project-view.html",
+    "src/contact-view/contact-view.html",
+    "src/about-view/about-small.html",
+    "src/project-view/project-small.html",
+    "src/contact-view/contact-small.html"
+  ]
+}
